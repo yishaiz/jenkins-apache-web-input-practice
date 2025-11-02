@@ -16,8 +16,7 @@ pipeline {
                 //Fisrt, drop the directory if exists
                 sh 'rm -rf /home/jenkins/web'
                 //Create the directory
-                sh 'mkdir /home/jenkins/web'
-                
+                sh 'mkdir /home/jenkins/web -p'                
             }
         }
         stage('Drop the Apache HTTPD Docker container'){
