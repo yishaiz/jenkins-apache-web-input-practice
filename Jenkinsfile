@@ -37,6 +37,14 @@ pipeline {
                 sh 'cp -r web/* /home/jenkins/web'
             }
         }
+
+        stage('install wget') { 
+            steps {
+                echo 'Installing wget'
+                sh 'apt-get update && apt-get install -y wget'
+            }
+        }
+
         stage('Checking the app') {
             steps {
                 echo 'Testing the web app'
