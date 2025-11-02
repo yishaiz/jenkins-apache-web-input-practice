@@ -49,7 +49,9 @@ pipeline {
             steps {
                 echo 'Testing the web app'
                 // sh 'wget http://localhost:9000'
-                sh 'wget http://host.docker.internal:9000'
+                // sh 'wget http://host.docker.internal:9000'
+                sh 'wget http://$(hostname -I | awk \'{print $1}\'):9000'
+
                 // sh 'wget http://apache1:80'
             }
         }       
